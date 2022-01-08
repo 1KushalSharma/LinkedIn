@@ -1,4 +1,4 @@
-package observer;
+package com.LinkedInApp;
 
 import java.util.ArrayList;
 import java.util.List;
