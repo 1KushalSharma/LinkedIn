@@ -31,10 +31,15 @@ public class LinkedIN  {
 
         followee_nilam.uploadPost("New Feature in C# ");
         
-        System.out.println();
-        Login login = new User();
-		login.giveAccountDetails();
-		System.out.println(login.getLogin());
+        System.out.println("--------------------------------------------------");
+        
+	PostDisplay postdisplay=new PostDisplay();
+	postdisplay.display(followee_nilam.getName());
+		
+	System.out.println("----------------------------------------------------");
+	Login login = new User();
+	login.giveAccountDetails();
+	System.out.println(login.getLogin());
     }
 }
 
