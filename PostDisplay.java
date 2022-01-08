@@ -1,4 +1,4 @@
-package observer;
+package com.LinkedInApp;
 
 public class PostDisplay {
 	public void display(String name){
