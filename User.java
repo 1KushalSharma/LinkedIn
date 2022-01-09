@@ -1,25 +1,21 @@
-package com.LinkedInApp;
-
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.io.*;
 
-public class User extends UserDetails implements Login {
-
+public class User extends UserDetails implements Login
+{
 	int flag = 0;
 	String userEmail, pass;
-
+	
+	
+	//Give Account Details
 	@Override
 	public void giveAccountDetails() {
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(
 					System.in));
-
 			System.out.println("Enter the UserName :");
 			String username = br.readLine();
-			
-			System.out.println("Enter the Role :");
-			String role = br.readLine();
 			
 			System.out.println("Enter the Email :");
 			while (flag == 0) {
@@ -43,19 +39,19 @@ public class User extends UserDetails implements Login {
 				}
 				System.out.println("Password Incorrect");
 				System.out.println("Enter the password :");
-				
 			}
           
 			setName(username);
-			setRole(role);
 			setEmail(userEmail);
 			setPassword(pass);
-
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-
+	
+	
+	//Main ALgorithm for the random code generation
 	public static boolean isValid(String email) {
 		String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@"
 				+ "(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$";
@@ -76,16 +72,10 @@ public class User extends UserDetails implements Login {
 		Matcher m = p.matcher(password);
 		return m.matches();
 	}
-
 	@Override
 	public String getLogin() {
 		String Name = getName();
 		String Email = getEmail();
-		
-		String Role = getRole(); 
-		sendEmail er = new sendEmail(Role);
-		er.print();
 		return ("The Account of " + Name + " with " + Email + " is valid and authenticated");
 	}
-
 }

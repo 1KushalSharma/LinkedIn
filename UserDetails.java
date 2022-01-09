@@ -1,10 +1,9 @@
-package com.LinkedInApp;
-
-public class UserDetails {
+public class UserDetails 
+{
 	private String Name;
-	private String Role;
 	private String Email;
 	private String password;
+	private String code;
 	
 	public String getName() {
 		return Name;
@@ -12,13 +11,6 @@ public class UserDetails {
 	public void setName(String name) {
 		Name = name;
 	}
-	public String getRole() {
-		return Role;
-	}
-	public void setRole(String role) {
-		Role = role;
-	}
-	
 	public String getEmail() {
 		return Email;
 	}
@@ -29,7 +21,12 @@ public class UserDetails {
 		return password;
 	}
 	public void setPassword(String password) {
+		
 		this.password = password;
+	}
+	public void setCode(String code)
+	{
+		this.code = code;
 	}
 	
 
